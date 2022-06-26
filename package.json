@@ -1,0 +1,89 @@
+{
+  "name": "nullboot-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "test:unit": "vue-cli-service test:unit",
+    "lint": "vue-cli-service lint",
+    "check-style": "prettier --check \"src/**/*.{vue,ts}\"",
+    "format": "prettier --write \"src/**/*.{vue,ts}\" \"tests/**/*.{vue,ts}\"",
+    "prepare": "husky install",
+    "api:master": "dtsgen --url https://nb.tsinghua.moe/docs-json --out ./src/@types/api.d.ts && prettier --write ./src/@types/api.d.ts",
+    "api:dev": "dtsgen --url https://backend-dev-null.app.secoder.net/docs-json --out ./src/@types/api.d.ts && prettier --write ./src/@types/api.d.ts"
+  },
+  "dependencies": {
+    "axios": "^0.26.1",
+    "core-js": "^3.8.3",
+    "dayjs": "^1.11.0",
+    "echarts": "^5.3.2",
+    "element-plus": "^2.1.11",
+    "github-markdown-css": "^5.1.0",
+    "highlight.js": "^11.5.1",
+    "js-cookie": "^3.0.1",
+    "lodash-es": "^4.17.21",
+    "markdown-it": "^12.3.2",
+    "markdown-it-emoji": "^2.0.0",
+    "markdown-it-highlightjs": "^3.6.0",
+    "md5": "^2.3.0",
+    "nprogress": "^0.2.0",
+    "pinia": "^2.0.12",
+    "vue": "^3.2.13",
+    "vue-echarts": "^6.0.2",
+    "vue-router": "^4.0.3"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
+    "@types/jest": "^27.0.1",
+    "@types/js-cookie": "^3.0.1",
+    "@types/lodash": "^4.14.180",
+    "@types/lodash-es": "^4.17.6",
+    "@types/markdown-it": "^12.2.3",
+    "@types/markdown-it-emoji": "^2.0.2",
+    "@types/markdown-it-highlightjs": "^3.3.1",
+    "@types/md5": "^2.3.2",
+    "@types/nprogress": "^0.2.0",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-plugin-router": "~5.0.0",
+    "@vue/cli-plugin-typescript": "~5.0.0",
+    "@vue/cli-plugin-unit-jest": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "@vue/eslint-config-typescript": "^9.1.0",
+    "@vue/test-utils": "^2.0.0-0",
+    "@vue/vue3-jest": "^27.0.0-alpha.1",
+    "babel-jest": "^27.0.6",
+    "dtsgenerator": "^3.15.1",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "husky": "^7.0.4",
+    "jest": "^27.0.5",
+    "lint-staged": "^12.3.7",
+    "prettier": "^2.4.1",
+    "sass": "^1.32.7",
+    "sass-loader": "^12.0.0",
+    "ts-jest": "^27.0.4",
+    "typescript": "~4.5.5"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
+  "jest": {
+    "preset": "@vue/cli-plugin-unit-jest/presets/typescript-and-babel"
+  },
+  "lint-staged": {
+    "*.{vue,ts}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  }
+}
