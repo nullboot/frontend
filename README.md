@@ -1,4 +1,4 @@
-# nullboot-frontend
+# NullBoot-frontend
 
 `PRJ2B` 新人培训系统 - 前端
 
